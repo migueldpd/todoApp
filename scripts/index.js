@@ -1,6 +1,7 @@
 let input = document.getElementById('inputTodo');
 let buttonAdd = document.getElementById('btnAdd');
 let todoList = document.getElementById('todoList');
+let clearAll = document.getElementById('btnClear');
 
 //presets buttons
 let presetsContainer = document.getElementById('presets');
@@ -51,6 +52,13 @@ buttonAdd.addEventListener('click', () => {
         todoList.removeChild(lineBreak);
     })
 
+})
+
+//delete all tasks at once
+clearAll.addEventListener('click', () => {
+    while (todoList.firstChild) {
+        todoList.firstChild.remove();
+    }
 })
 
 
